@@ -1,0 +1,37 @@
+### 策略导出
+POST  http://localhost:8080/strategy/export HTTP/1.1
+Content-Type: application/json
+
+{
+  "excelName": "ORDER_EXCEL",
+  "fields": ["id", "name"]
+}
+
+### 策略导出
+GET http://localhost:8080/strategy/fields?excelName=ORDER_EXCEL HTTP/1.1
+Content-Type: application/json
+
+
+### aop导出 列
+POST http://localhost:8080/aop/export HTTP/1.1
+Content-Type: application/json
+
+{
+  "excelName": "ORDER_EXCEL",
+  "fields": ["id", "name"],
+  "exportType" : "COLUMN"
+}
+
+
+### aop导出 数据
+POST http://localhost:8080/aop/export HTTP/1.1
+Content-Type: application/json
+
+{
+  "excelName": "ORDER_EXCEL",
+  "fields": ["id", "name"],
+  "exportType" : "DATA"
+}
+
+
+
