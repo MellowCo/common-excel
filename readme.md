@@ -1,6 +1,6 @@
 > 使用 `策略模式` 和 `Spring Aop` 2种方式，设计通用导出方案，导出demo使用 [EasyExcel](https://easyexcel.opensource.alibaba.com/) 
 
-# 通过策略模式
+# 方案一：通过策略模式
 
 ## 定义导出策略
 
@@ -286,7 +286,25 @@ fetch('http://localhost:8080/strategy/export', {
 
 ---
 
-# 通过AOP实现
+# 方案二：通过AOP实现
+
+> 定义导出注解,使用该注解会通过 aop 实现导出
+
+```java
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface ExcelExport {
+
+  /**
+   * 导出对象
+   */
+  Class<?> value();
+
+}
+```
+
+
 
 > 定义 aop 导出
 
