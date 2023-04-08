@@ -26,6 +26,17 @@ public class ExcelField {
 }
 ```
 
+*　导出参数
+```java
+@Data
+public class ExcelParam {
+  private String[] fields;
+  private String excelName;
+  private ExportType exportType;
+}
+```
+
+
 * 工单实体
 ```java
 @Data
@@ -300,7 +311,6 @@ public @interface ExcelExport {
    * 导出对象
    */
   Class<?> value();
-
 }
 ```
 
